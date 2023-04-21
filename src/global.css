@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@font-face {
+  font-family: "Optima LT Std";
+  src: url("../public/Optima LT Std Medium.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Optima LT Std";
+  src: url("../public/Optima LT Std Demi.ttf");
+  font-weight: 500;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply leading-[normal] m-0;
+
+}
+
+@keyframes shadow-inset-center {
+  0% {
+    box-shadow: inset 0 0 0 0 transparent;
+  }
+  100% {
+    box-shadow: inset 0 0 14px 0 rgb(0 0 0 / 50%);
+  }
+}

@@ -1,0 +1,65 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        white: "#fff",
+        black: "#000",
+        whitesmoke: { 100: "#f4f4f2", 200: "#ececf0" },
+        gray: {
+          100: "#98836f",
+          200: "#161412",
+          300: "rgba(22, 37, 51, 0.6)",
+        },
+        darkslateblue: "#2f3367",
+        dimgray: {
+          100: "#65635f",
+          200: "#463619",
+          300: "rgba(101, 99, 95, 0.2)",
+        },
+        gainsboro: "#e1e1de",
+      },
+      fontFamily: {
+        "optima-lt-std": "'Optima LT Std'",
+        "inria-serif": "'Inria Serif'",
+        karla: "Karla",
+        assistant: "Assistant",
+        "dm-sans": "'DM Sans'",
+      },
+      borderRadius: {
+        xxs: "10px",
+        small: "113.5px",
+        base: "119.5px",
+        large: "129px",
+        xxl: "343px",
+      },
+    },
+    fontSize: {
+      base: "14px",
+      lg: "15px",
+      xl: "16px",
+      "2xl": "18px",
+      "3xl": "20px",
+      "4xl": "21px",
+      "5xl": "22px",
+      "6xl": "24px",
+      "7xl": "26px",
+      "8xl": "30px",
+      "9xl": "35px",
+      "10xl": "40px",
+      "11xl": "42px",
+      "12xl": "52px",
+    },
+    screens: {
+      lg: { max: "1240px" },
+      md: { max: "768px" },
+      sm: { max: "428px" },
+      mq685: { raw: "screen and (max-width: 685px)" },
+      mq1124: { raw: "screen and (max-width: 1124px)" },
+      mq1000: { raw: "screen and (max-width: 1000px)" },
+      mq530: { raw: "screen and (max-width: 530px)" },
+    },
+  },
+  corePlugins: { preflight: false },
+};

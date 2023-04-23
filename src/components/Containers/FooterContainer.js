@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const FooterContainer = () => {
   return (
     <div className=" bg-gainsboro flex flex-col pt-10 px-0 pb-0 items-start justify-start text-left text-base text-black font-dm-sans">
@@ -84,44 +86,44 @@ const FooterContainer = () => {
         <div className="self-stretch flex flex-row items-center justify-center mq1000:flex-col">
           <div className="flex-1 flex flex-row items-center justify-center gap-[20px] mq685:gap-[0] mq1000:w-full mq1000:pl-[0%] mq1000:box-border mq1000:flex-[unset] mq1000:self-stretch">
             <div className="w-[88px] shrink-0 flex flex-row items-center justify-center">
-              <a
-                href="/aboutus"
+              <Link
+                to="/aboutus"
                 className="[text-decoration:none] relative uppercase font-medium text-[inherit] inline-block w-[88px] shrink-0"
               >
                 About us
-              </a>
+              </Link>
             </div>
             <div className="w-[127px] shrink-0 flex flex-col items-center justify-center">
-              <a
-                href="/contactus"
+              <Link
+                to="/contactus"
                 className="[text-decoration:none] relative uppercase font-medium text-[inherit] inline-block w-[127px]"
               >
                 Contact us
-              </a>
+              </Link>
             </div>
             <div className="w-[54px] shrink-0 flex flex-row items-center justify-center">
-              <a
-                href="/help"
+              <Link
+                to="/help"
                 className="[text-decoration:none] relative uppercase font-medium text-[inherit] inline-block w-[54px] shrink-0"
               >
                 Help
-              </a>
+              </Link>
             </div>
             <div className="w-32 shrink-0 flex flex-row items-center justify-center">
-              <a
-                href="/privacypolicies"
+              <Link
+                to="/privacypolicies"
                 className="[text-decoration:none] relative uppercase font-medium text-[inherit] inline-block w-32 shrink-0"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </div>
             <div className="w-[101px] shrink-0 flex flex-row items-center justify-center">
-              <a
-                href="/disclaimer"
+              <Link
+                to="/disclaimer"
                 className="[text-decoration:none] relative uppercase font-medium text-[inherit] inline-block w-[101px] shrink-0"
               >
                 Disclaimer
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex-1 flex flex-row p-2.5 items-center justify-center text-gray-200 font-assistant mq1000:flex-[unset] mq1000:self-stretch">

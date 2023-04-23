@@ -37,7 +37,6 @@ const CreateProduct = () => {
   });
 
   const handelChange = (e) => {
-    //http://drive.google.com/uc?export=view&id=
     const productName = document.getElementById("productName").value;
     const artistName = document.getElementById("artistName").value;
     const desc1 = document.getElementById("desc1").value;
@@ -47,15 +46,12 @@ const CreateProduct = () => {
     const desc5 = document.getElementById("desc5").value;
     const desc6 = document.getElementById("desc6").value;
     const price = parseInt(document.getElementById("price").value);
-    const imgPrimary = `http://drive.google.com/uc?export=view&id=${
-      document.getElementById("imgPrimary").value
-    }`;
-    const img1 = `http://drive.google.com/uc?export=view&id=${
-      document.getElementById("img1").value
-    }`;
-    const img2 = `http://drive.google.com/uc?export=view&id=${
-      document.getElementById("img2").value
-    }`;
+    const imgPrimary = document.getElementById("imgPrimary").value;
+
+    const img1 = document.getElementById("img1").value;
+
+    const img2 = document.getElementById("img2").value;
+
     const category = document.getElementById("category").value;
     const stock = parseInt(document.getElementById("stock").value);
 

@@ -50,7 +50,10 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
     const token = localStorage.getItem("token");
-    const { data } = await axios.post(`${BASE_URL}/api/order`, null, {
+    const dummyData = {
+      name: "dummydata",
+    };
+    const { data } = await axios.post(`${BASE_URL}/api/order`, dummyData, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

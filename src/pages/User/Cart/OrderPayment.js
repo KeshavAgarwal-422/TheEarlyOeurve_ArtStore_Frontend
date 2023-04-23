@@ -31,11 +31,19 @@ const Payment = () => {
   const checkoutHandler = async (totalPrice) => {
     const {
       data: { key },
-    } = await axios.get(`${BASE_URL}/payment/getkey`);
+    } = await axios.get(`${BASE_URL}/api/payment/getkey`, {
+      "Content-Type": "application/json",
+    });
 
     const {
       data: { order },
-    } = await axios.post(`${BASE_URL}/payment/checkout`, { totalPrice });
+    } = await axios.post(
+      `${BASE_URL}/api/payment/checkout`,
+      { totalPrice },
+      {
+        "Content-Type": "application/json",
+      }
+    );
 
     const options = {
       key,
@@ -44,7 +52,7 @@ const Payment = () => {
       name: "The Early Oeuvre",
       description: "",
       image:
-        "http://drive.google.com/uc?export=view&id=1s1WBOQk_EQ77NDAo5NuogMzgBwDx5lqv",
+        "https://i.ibb.co/0Jx2JQ3/119387896-123284702829832-8666968427235121470-n.jpg",
 
       order_id: order.id,
       handler: async function (response) {
@@ -55,8 +63,11 @@ const Payment = () => {
         };
 
         const result = await axios.post(
-          `${BASE_URL}/payment/paymentverification`,
-          { ...data }
+          `${BASE_URL}/api/payment/paymentverification`,
+          { ...data },
+          {
+            "Content-Type": "application/json",
+          }
         );
 
         finalOrder.paymentInfo = {

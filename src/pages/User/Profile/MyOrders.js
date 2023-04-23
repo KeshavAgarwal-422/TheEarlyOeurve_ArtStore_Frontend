@@ -24,7 +24,7 @@ const MyOrders = () => {
     <Loading />
   ) : (
     <>
-      {orders.length === 0 ? (
+      {orders && orders.length === 0 ? (
         <div className="flex justify-center align-middle  pt-10 text-8xl text-black font-optima-lt-std min-h-[900px]">
           No Orders Yet...
         </div>

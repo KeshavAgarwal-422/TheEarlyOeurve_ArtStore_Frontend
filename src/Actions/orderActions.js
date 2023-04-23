@@ -27,7 +27,7 @@ export const createOrder = (order) => async (dispatch) => {
     dispatch({ type: CREATE_ORDER_REQUEST });
     const token = localStorage.getItem("token");
     const { data } = await axios.post(
-      `${BASE_URL}/order/neworder`,
+      `${BASE_URL}/api/order/neworder`,
       { order },
       {
         headers: {
@@ -50,7 +50,7 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
     const token = localStorage.getItem("token");
-    const { data } = await axios.post(`${BASE_URL}/order`, null, {
+    const { data } = await axios.post(`${BASE_URL}/api/order`, null, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
     const token = localStorage.getItem("token");
-    const { data } = await axios.get(`${BASE_URL}/order`, {
+    const { data } = await axios.get(`${BASE_URL}/api/order`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -91,7 +91,7 @@ export const updateOrder = (id, status) => async (dispatch) => {
     dispatch({ type: UPDATE_ORDER_REQUEST });
     const token = localStorage.getItem("token");
     const { data } = await axios.put(
-      `${BASE_URL}/order/admin/${id}`,
+      `${BASE_URL}/api/order/admin/${id}`,
       {
         status,
       },
@@ -116,7 +116,7 @@ export const deleteOrder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDER_REQUEST });
     const token = localStorage.getItem("token");
-    const { data } = await axios.delete(`${BASE_URL}/order/admin/${id}`, {
+    const { data } = await axios.delete(`${BASE_URL}/api/order/admin/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -136,7 +136,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
     const token = localStorage.getItem("token");
-    const { data } = await axios.get(`${BASE_URL}/order/${id}`, {
+    const { data } = await axios.get(`${BASE_URL}/api/order/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

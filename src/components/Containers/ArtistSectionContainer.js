@@ -9,17 +9,17 @@ const ArtistSectionContainer = () => {
         </div>
         <div className="self-stretch flex flex-row items-start justify-start gap-[32px] text-xl font-optima-lt-std mq685:flex-col ">
           <ArtistCard
-            ImageUrl="http://drive.google.com/uc?export=view&id=1xjItXJb42SDUKVL04FvI5deC2KwMBCf4"
+            ImageUrl="https://i.ibb.co/nrYPxC9/132836356-3566054123429633-4251126981234917118-n-cleanup-modified.png"
             name="NeetuAgarwal"
             profile="Artist, India"
           />
           <ArtistCard
-            ImageUrl="http://drive.google.com/uc?export=view&id=1v5HG2E3YlRrp9nyZpLhX18Wd17cSw2ZF"
+            ImageUrl="https://i.ibb.co/tYyvWQP/321337946-502926655023952-3553928575725872998-n-11-2x.png"
             name="AmanMishra"
             profile="Painter, India"
           />
           <ArtistCard
-            ImageUrl="http://drive.google.com/uc?export=view&id=1g2TScvzB69eknckvKlDNkBAsiH28N07W"
+            ImageUrl="https://i.ibb.co/WWCbmD5/136411404-474730896873843-1944920279434530665-n-11-2x.png"
             name="ShreshthaAgarwal"
             profile="Painter, India"
           />

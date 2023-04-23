@@ -43,7 +43,9 @@ export const getProduct = (keyword) => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCT_REQUEST });
 
-    const { data } = await axios.get(`${BASE_URL}/product?keyword=${keyword}`);
+    const { data } = await axios.get(`${BASE_URL}/product?keyword=${keyword}`, {
+      "Content-Type": "application/json",
+    });
 
     dispatch({
       type: ALL_PRODUCT_SUCCESS,
@@ -62,7 +64,9 @@ export const getFeaturedProducts = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_FEATUREDPRODUCT_REQUEST });
 
-    const { data } = await axios.get(`${BASE_URL}/product/featured`);
+    const { data } = await axios.get(`${BASE_URL}/product/featured`, {
+      "Content-Type": "application/json",
+    });
 
     dispatch({
       type: ALL_FEATUREDPRODUCT_SUCCESS,
@@ -80,7 +84,9 @@ export const getPaintings = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_PAINTING_REQUEST });
 
-    const { data } = await axios.get(`${BASE_URL}/product/paintings`);
+    const { data } = await axios.get(`${BASE_URL}/product/paintings`, {
+      "Content-Type": "application/json",
+    });
 
     dispatch({
       type: ALL_PAINTING_SUCCESS,
@@ -98,7 +104,9 @@ export const getDrawings = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_DRAWING_REQUEST });
 
-    const { data } = await axios.get(`${BASE_URL}/product/drawings`);
+    const { data } = await axios.get(`${BASE_URL}/product/drawings`, {
+      "Content-Type": "application/json",
+    });
 
     dispatch({
       type: ALL_DRAWING_SUCCESS,
@@ -116,7 +124,9 @@ export const getSculptures = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_SCULPTURE_REQUEST });
 
-    const { data } = await axios.get(`${BASE_URL}/product/sculptures`);
+    const { data } = await axios.get(`${BASE_URL}/product/sculptures`, {
+      "Content-Type": "application/json",
+    });
 
     dispatch({
       type: ALL_SCULPTURE_SUCCESS,
@@ -138,6 +148,7 @@ export const getAdminProduct = () => async (dispatch) => {
     const { data } = await axios.post(`${BASE_URL}/product/admin`, null, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -164,6 +175,7 @@ export const createProduct = (productData) => async (dispatch) => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       }
     );
@@ -190,6 +202,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       }
     );
@@ -213,10 +226,9 @@ export const deleteProduct = (id) => async (dispatch) => {
     const { data } = await axios.delete(`${BASE_URL}/product/admin/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
-
-    console.log(data);
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
@@ -234,7 +246,9 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`${BASE_URL}/product/${id}`);
+    const { data } = await axios.get(`${BASE_URL}/product/${id}`, {
+      "Content-Type": "application/json",
+    });
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,

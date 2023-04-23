@@ -32,10 +32,11 @@ export const createOrder = (order) => async (dispatch) => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       }
     );
-  
+
     dispatch({ type: CREATE_ORDER_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -52,6 +53,7 @@ export const myOrders = () => async (dispatch) => {
     const { data } = await axios.post(`${BASE_URL}/order`, null, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -71,6 +73,7 @@ export const getAllOrders = () => async (dispatch) => {
     const { data } = await axios.get(`${BASE_URL}/order`, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -95,6 +98,7 @@ export const updateOrder = (id, status) => async (dispatch) => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       }
     );
@@ -115,6 +119,7 @@ export const deleteOrder = (id) => async (dispatch) => {
     const { data } = await axios.delete(`${BASE_URL}/order/admin/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -134,6 +139,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
     const { data } = await axios.get(`${BASE_URL}/order/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 

@@ -43,10 +43,16 @@ export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
 
-    const { data } = await axios.post(`${BASE_URL}/user/login`, {
-      email,
-      password,
-    });
+    const { data } = await axios.post(
+      `${BASE_URL}/user/login`,
+      {
+        email,
+        password,
+      },
+      {
+        "Content-Type": "application/json",
+      }
+    );
 
     dispatch({
       type: LOGIN_SUCCESS,
@@ -66,7 +72,9 @@ export const signup = (userData) => async (dispatch) => {
   try {
     dispatch({ type: REGISTER_USER_REQUEST });
 
-    const { data } = await axios.post(`${BASE_URL}/user/signup`, userData);
+    const { data } = await axios.post(`${BASE_URL}/user/signup`, userData, {
+      "Content-Type": "application/json",
+    });
 
     dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
     localStorage.setItem("token", data.token);
@@ -131,6 +139,7 @@ export const loadUser = () => async (dispatch) => {
     const { data } = await axios.get(`${BASE_URL}/user/mydetails`, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -142,7 +151,9 @@ export const loadUser = () => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
   try {
-    const { data } = await axios.get(`${BASE_URL}/user/logout`);
+    const { data } = await axios.get(`${BASE_URL}/user/logout`, {
+      "Content-Type": "application/json",
+    });
 
     localStorage.setItem("token", "");
 
@@ -163,6 +174,7 @@ export const updateProfile = (userData) => async (dispatch) => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       }
     );
@@ -188,6 +200,7 @@ export const updatePassword = (userData) => async (dispatch) => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       }
     );
@@ -209,6 +222,7 @@ export const getAllUsers = () => async (dispatch) => {
     const { data } = await axios.get(`${BASE_URL}/user/admin`, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -225,6 +239,7 @@ export const getUserDetails = (id) => async (dispatch) => {
     const { data } = await axios.get(`${BASE_URL}/user/admin/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -241,6 +256,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
     const { data } = await axios.put(`${BASE_URL}/user/admin/${id}`, userData, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -260,6 +276,7 @@ export const deleteUser = (id) => async (dispatch) => {
     const { data } = await axios.delete(`${BASE_URL}/user/admin/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
 

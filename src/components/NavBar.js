@@ -21,8 +21,8 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="self-stretch overflow-hidden flex flex-col py-3 px-[51px] items-center justify-center text-left text-base text-gray-200 font-karla mb-10">
-        <div className="self-stretch flex flex-row py-0 pr-[41px] pl-0 items-center justify-between">
+      <div className="self-stretch overflow-hidden flex flex-col py-3 px-2 items-center justify-center text-left text-base text-gray-200 font-karla mb-10 ">
+        <div className="self-stretch flex flex-row py-0 pr-[41px] pl-0 items-center justify-between ">
           <div className="w-[133px] shrink-0 flex flex-col p-2.5 box-border items-start justify-start">
             <Link to="/">
               <img
